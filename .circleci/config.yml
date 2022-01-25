@@ -14,6 +14,9 @@ jobs:
           command: |
             echo "Compilando Carajo!"
             docker build -t kamentsa/democircleci .
+            echo "$DOCKERHUB_PASSWORD" | docker login -u "$DOCKER_USER" --password-stdin
+            docker tag kamentsa/democircleci kamentsa/democircleci:${CIRCLE_BUILD_NUM}
+            docker push kamentsa/democircleci:${CIRCLE_BUILD_NUM}
 
   test: 
     docker:
