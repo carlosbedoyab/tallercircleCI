@@ -13,7 +13,7 @@ jobs:
           name: "Compilacion"
           command: |
             echo "Compilando Carajo!"
-            docker build -t kamentsa/democircleci
+            docker build -t kamentsa/democircleci .
 
   test: 
     docker:
