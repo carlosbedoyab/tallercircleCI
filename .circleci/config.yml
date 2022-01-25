@@ -4,12 +4,16 @@ version: 2.1
 jobs:
   compile:
     docker:
-      - image: cimg/base:stable
+      - image: circleci/buildpack-deps:stretch
+
     steps:
       - checkout
+      - setup_remote_docker
       - run:
           name: "Compilacion"
-          command: "echo Compilando Carajo!"
+          command: |
+          echo "Compilando Carajo!"
+          docker build -t kamentsa/democircleci
 
   test: 
     docker:
