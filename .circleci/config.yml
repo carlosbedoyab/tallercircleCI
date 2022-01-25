@@ -37,8 +37,8 @@ workflows:
   say-hello-workflow:
     jobs:
       - compile
-        name: construcccion
+          name: construcccion
       - test
-        name: Test
+          name: Test
       - deploy
-        name: Despliegue
+          name: Despliegue
